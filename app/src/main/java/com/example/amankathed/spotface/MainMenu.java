@@ -9,11 +9,12 @@ import android.widget.Button;
 import com.example.amankathed.spotface.Activities.Authenticate.Recognition;
 import com.example.amankathed.spotface.Activities.Register.Capture;
 import com.example.amankathed.spotface.Activities.Settings.Settings;
+import com.example.amankathed.spotface.Activities.ViewAll.ViewAll;
 
 
 public class MainMenu extends AppCompatActivity {
 
-    Button auth,register,settings,exit;
+    Button auth,register,settings,exit,view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainMenu extends AppCompatActivity {
         register= (Button) findViewById(R.id.register_face_btn);
         settings = (Button) findViewById(R.id.settings_btn);
         exit= (Button) findViewById(R.id.exit);
+        view= (Button) findViewById(R.id.view_btn);
         auth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +41,12 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Settings.class));
+            }
+        });
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ViewAll.class));
             }
         });
         exit.setOnClickListener(new View.OnClickListener() {

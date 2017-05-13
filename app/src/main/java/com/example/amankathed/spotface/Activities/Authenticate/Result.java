@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.amankathed.spotface.MainMenu;
 import com.example.amankathed.spotface.R;
@@ -32,12 +33,17 @@ public class Result extends AppCompatActivity {
         final byte[] byteArray = extras.getByteArray("imgg");
         String name_id=extras.getString("name");
         String conf=extras.getString("conf");
+        float p = Float.parseFloat(conf);
+        float fp = p*100;
+        String v = String.valueOf(fp);
+
+        Toast.makeText(getApplicationContext(),v+" %",Toast.LENGTH_SHORT).show();
         if (conf.equals("0.0")){
             confidence.setVisibility(View.GONE);
             name.setTextColor(getResources().getColor(R.color.red));
         }
         name.setText(name_id);
-        confidence.setText("Confidence: "+conf);
+        confidence.setText("Confidence: "+v+" %");
         Bitmap bmpp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         Bitmap bmp = Bitmap.createBitmap(bmpp, 0, 0, bmpp.getWidth(), bmpp.getHeight(), null, true);
         img.setImageBitmap(bmp);

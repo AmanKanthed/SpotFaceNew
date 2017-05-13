@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +30,13 @@ import com.example.amankathed.spotface.MainMenu;
 import com.example.amankathed.spotface.R;
 import com.example.amankathed.spotface.Utils.Connection;
 import com.example.amankathed.spotface.Utils.Constants;
+import com.example.amankathed.spotface.Utils.SharedPrefs;
+
 import okhttp3.OkHttpClient;
 
 public class Settings extends AppCompatActivity {
 
-    Button reset,back;
+    Button reset,back,changebtn,editbtn,ok,cncl;
     OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
@@ -40,6 +44,10 @@ public class Settings extends AppCompatActivity {
             .build();
     LoadToast loadToast;
     Connection connection;
+    SharedPrefs sharedPrefs;
+    RelativeLayout rel1,rel2;
+    EditText fre;
+    TextView per,prgstxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +55,63 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         reset= (Button) findViewById(R.id.reset_btn);
         back= (Button) findViewById(R.id.back);
+        changebtn= (Button) findViewById(R.id.changebtn);
+        editbtn= (Button) findViewById(R.id.editbtn);
+        rel1= (RelativeLayout) findViewById(R.id.rel1);
+        rel2= (RelativeLayout) findViewById(R.id.rel2);
+        ok= (Button) findViewById(R.id.btnok);
+        cncl= (Button) findViewById(R.id.cancl);
+        fre= (EditText) findViewById(R.id.thrfreq);
+        per = (TextView) findViewById(R.id.tt1);
         loadToast=new LoadToast(this);
         loadToast.setText("Resetting...");
         connection=new Connection(this);
+        sharedPrefs = new SharedPrefs(this);
+        int val = sharedPrefs.getCam_prefs();
+        if (val==0){
+            changebtn.setText("Back");
+        }else {
+            changebtn.setText("Front");
+        }
+        per.setText(sharedPrefs.getPer_prefs()+" %");
+        editbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rel1.setVisibility(View.GONE);
+                rel2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String f =fre.getText().toString();
+                int i = Integer.parseInt(String.valueOf(f));
+                if (i==0 || i>100 || i<40){
+                    fre.setText(null);
+                    fre.setError("Invalid Input");
+                }else {
+                    sharedPrefs.setPer_prefs(f);
+                    String s = String.valueOf(sharedPrefs.getPer_prefs()+" %");
+                    per.setText(f);
+                    rel1.setVisibility(View.VISIBLE);
+                    rel2.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        changebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (sharedPrefs.getCam_prefs()==0){
+                    sharedPrefs.setCam_prefs();
+                    changebtn.setText("Front");
+                }else {
+                    sharedPrefs.setCam_prefs();
+                    changebtn.setText("Back");
+                }
+            }
+        });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

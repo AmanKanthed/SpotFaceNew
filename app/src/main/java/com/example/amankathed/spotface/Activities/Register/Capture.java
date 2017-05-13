@@ -16,6 +16,7 @@ import java.io.IOException;
 
 import com.example.amankathed.spotface.MainMenu;
 import com.example.amankathed.spotface.R;
+import com.example.amankathed.spotface.Utils.SharedPrefs;
 
 public class Capture extends AppCompatActivity implements SurfaceHolder.Callback {
 
@@ -24,8 +25,9 @@ public class Capture extends AppCompatActivity implements SurfaceHolder.Callback
     SurfaceView surfaceView;
     SurfaceHolder surfaceHolder;
     public static boolean previewing = false;
-    int currentCameraId = 0;
+    int currentCameraId;
     Context context;
+    SharedPrefs sharedPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class Capture extends AppCompatActivity implements SurfaceHolder.Callback
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         take_pic = (Button) findViewById(R.id.takepic_btn);
         flip = (Button) findViewById(R.id.flip_cam_btn);
+        sharedPrefs= new SharedPrefs(this);
+        currentCameraId=sharedPrefs.getCam_prefs();
         startcam(currentCameraId);
 
         take_pic.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +50,6 @@ public class Capture extends AppCompatActivity implements SurfaceHolder.Callback
                 // TODO Auto-generated method stub
 
                 if(camera1 != null) {
-
                     Camera.Parameters param;
                     param = camera1.getParameters();
                     param.setPreviewSize(640, 480);
@@ -68,36 +71,36 @@ public class Capture extends AppCompatActivity implements SurfaceHolder.Callback
                 else {
                     currentCameraId = Camera.CameraInfo.CAMERA_FACING_BACK;
                 }
-                    camera1 = Camera.open(currentCameraId);
-                    if (camera1 != null){
-                        try {
-                            camera1.setDisplayOrientation(90);
-                            camera1.setPreviewDisplay(surfaceHolder);
-                            camera1.startPreview();
-                            previewing = true;
-                        } catch (IOException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
+                camera1 = Camera.open(currentCameraId);
+                if (camera1 != null){
+                    try {
+                        camera1.setDisplayOrientation(90);
+                        camera1.setPreviewDisplay(surfaceHolder);
+                        camera1.startPreview();
+                        previewing = true;
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
                     }
+                }
             }
         });
     }
 
 
-    Camera.ShutterCallback myShutterCallback = new Camera.ShutterCallback(){
+    android.hardware.Camera.ShutterCallback myShutterCallback = new android.hardware.Camera.ShutterCallback(){
 
         public void onShutter() {
             // TODO Auto-generated method stub
         }};
 
-    Camera.PictureCallback myPictureCallback_RAW = new Camera.PictureCallback(){
+    android.hardware.Camera.PictureCallback myPictureCallback_RAW = new android.hardware.Camera.PictureCallback(){
 
         public void onPictureTaken(byte[] arg0, Camera arg1) {
             // TODO Auto-generated method stub
         }};
 
-    Camera.PictureCallback myPictureCallback_JPG = new Camera.PictureCallback(){
+    android.hardware.Camera.PictureCallback myPictureCallback_JPG = new android.hardware.Camera.PictureCallback(){
 
         public void onPictureTaken(byte[] arg0, Camera arg1) {
             // TODO Auto-generated method stub

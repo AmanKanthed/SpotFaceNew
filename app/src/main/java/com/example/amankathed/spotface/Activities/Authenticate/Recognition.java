@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.example.amankathed.spotface.MainMenu;
 import com.example.amankathed.spotface.R;
+import com.example.amankathed.spotface.Utils.SharedPrefs;
 
 import java.io.IOException;
 
@@ -25,8 +26,9 @@ public class Recognition extends AppCompatActivity implements SurfaceHolder.Call
     SurfaceView surfaceView;
     SurfaceHolder surfaceHolder;
     public static boolean previewing = false;
-    int currentCameraId = 0;
+    int currentCameraId;
     Context context;
+    SharedPrefs sharedPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class Recognition extends AppCompatActivity implements SurfaceHolder.Call
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         take_pic = (Button) findViewById(R.id.takepic_btn);
         flip = (Button) findViewById(R.id.flip_cam_btn);
+        sharedPrefs = new SharedPrefs(this);
+        currentCameraId=sharedPrefs.getCam_prefs();
         startcam(currentCameraId);
 
         take_pic.setOnClickListener(new View.OnClickListener() {
@@ -85,19 +89,19 @@ public class Recognition extends AppCompatActivity implements SurfaceHolder.Call
     }
 
 
-    Camera.ShutterCallback myShutterCallback = new Camera.ShutterCallback(){
+    android.hardware.Camera.ShutterCallback myShutterCallback = new android.hardware.Camera.ShutterCallback(){
 
         public void onShutter() {
             // TODO Auto-generated method stub
         }};
 
-    Camera.PictureCallback myPictureCallback_RAW = new Camera.PictureCallback(){
+    android.hardware.Camera.PictureCallback myPictureCallback_RAW = new android.hardware.Camera.PictureCallback(){
 
         public void onPictureTaken(byte[] arg0, Camera arg1) {
             // TODO Auto-generated method stub
         }};
 
-    Camera.PictureCallback myPictureCallback_JPG = new Camera.PictureCallback(){
+    android.hardware.Camera.PictureCallback myPictureCallback_JPG = new android.hardware.Camera.PictureCallback(){
 
         public void onPictureTaken(byte[] arg0, Camera arg1) {
             // TODO Auto-generated method stub

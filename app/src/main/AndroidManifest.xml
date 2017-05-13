@@ -24,19 +24,29 @@ package="com.example.amankathed.spotface">
         </intent-filter>
     </activity>
     <activity android:name=".MainMenu" />
-    <activity android:name=".Activities.Settings.Settings" />
-    <activity android:name=".Activities.Register.ConfirmPicture"
-        android:parentActivityName=".MainMenu"/>
-    <activity android:name=".Activities.Register.Capture"
-        android:parentActivityName=".MainMenu"/>
-    <activity android:name=".Activities.Register.ConfirmCapture"
-        android:parentActivityName=".MainMenu"/>
+    <activity
+        android:name=".Activities.Settings.Settings"
+        android:parentActivityName=".MainMenu" />
+    <activity
+        android:name=".Activities.Register.ConfirmPicture"
+        android:parentActivityName=".MainMenu" />
+    <activity
+        android:name=".Activities.Register.Capture"
+        android:parentActivityName=".MainMenu" />
+    <activity
+        android:name=".Activities.Register.ConfirmCapture"
+        android:parentActivityName=".MainMenu" />
     <activity android:name=".Activities.Register.TrainSuccess" />
-    <activity android:name=".Activities.Authenticate.Recognition"
-        android:parentActivityName=".MainMenu"/>
-    <activity android:name=".Activities.Authenticate.ConfirmRecPicture"
-        android:parentActivityName=".MainMenu"/>
-    <activity android:name=".Activities.Authenticate.Result"
+    <activity
+        android:name=".Activities.Authenticate.Recognition"
+        android:parentActivityName=".MainMenu" />
+    <activity
+        android:name=".Activities.Authenticate.ConfirmRecPicture"
+        android:parentActivityName=".MainMenu" />
+    <activity
+        android:name=".Activities.Authenticate.Result"
+        android:parentActivityName=".MainMenu" />
+    <activity android:name=".Activities.ViewAll.ViewAll"
         android:parentActivityName=".MainMenu"></activity>
 </application>
 

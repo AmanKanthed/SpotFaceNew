@@ -223,6 +223,7 @@ public class ConfirmRecPicture extends AppCompatActivity {
 
                     @Override
                     public void onError(ANError anError) {
+                        Log.e("LOGGG",anError.toString());
                         loadToast.error();
                         Toast.makeText(getApplicationContext(), "Try again later", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainMenu.class));
