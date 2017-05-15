@@ -1,7 +1,7 @@
 
 # SpotFace
 
-Copyright © 2017 Aman Kathed, Samuel Walladge
+Copyright © 2017 Aman Kathed, David Cawthorne, Samuel Walladge
 
 
 ## About
