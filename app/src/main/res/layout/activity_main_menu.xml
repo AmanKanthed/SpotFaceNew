@@ -55,7 +55,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:text="Authenticate with SpotFace"
+                android:text="Recognize Face"
                 android:layout_below="@+id/register_face_btn"
                 android:background="#00e676"
                 android:layout_marginTop="20dp"
@@ -75,7 +75,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:text="View All Registered Member Names"
+                android:text="View Registered Names"
                 android:layout_below="@+id/settings_btn"
                 android:background="#00e676"
                 android:layout_marginTop="20dp"

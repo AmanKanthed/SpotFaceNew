@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.errorlabs.spotface.Activities.Register.ConfirmCapture">
+    tools:context="com.example.amankathed.spotface.Activities.Register.ConfirmCapture">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Name To Complete Training"
+        android:hint="Enter Your Name"
         android:layout_below="@+id/img_view"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
