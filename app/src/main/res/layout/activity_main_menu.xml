@@ -65,18 +65,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:text="Settings"
-                android:layout_below="@+id/auth_with_sp_btn"
-                android:background="#00e676"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"
-                android:id="@+id/settings_btn"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
                 android:text="View Registered Names"
-                android:layout_below="@+id/settings_btn"
+                android:layout_below="@+id/auth_with_sp_btn"
                 android:background="#00e676"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
@@ -84,9 +74,29 @@
 
             <Button
                 android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Settings"
+                android:layout_below="@+id/view_btn"
+                android:background="#00e676"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:id="@+id/settings_btn"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="About"
+                android:layout_below="@+id/settings_btn"
+                android:background="#00e676"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:id="@+id/about_btn"/>
+
+            <Button
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Exit"
-                android:layout_below="@+id/view_btn"
+                android:layout_below="@+id/about_btn"
                 android:background="#00e676"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"

@@ -25,6 +25,9 @@ package="com.example.amankathed.spotface">
     </activity>
     <activity android:name=".MainMenu" />
     <activity
+        android:name=".About"
+        android:parentActivityName=".MainMenu" />
+    <activity
         android:name=".Activities.Settings.Settings"
         android:parentActivityName=".MainMenu" />
     <activity

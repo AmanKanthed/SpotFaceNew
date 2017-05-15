@@ -33,6 +33,7 @@ public class MainMenu extends AppCompatActivity {
         settings = (Button) findViewById(R.id.settings_btn);
         exit= (Button) findViewById(R.id.exit);
         view= (Button) findViewById(R.id.view_btn);
+        Button about = (Button) findViewById(R.id.about_btn);
         auth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +64,13 @@ public class MainMenu extends AppCompatActivity {
                 finish();
             }
         });
+
+        about.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        startActivity(new Intent(getApplicationContext(), About.class));
+                                    }
+                                });
 
         // get camera permissions
 
