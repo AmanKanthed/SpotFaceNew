@@ -29,13 +29,28 @@
             android:layout_marginTop="20dp"
             android:layout_below="@+id/img">
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:autoLink="web"
+                android:text="Please note: by using this app you agree to the privacy policy at http://kairos.com/privacy and terms at http://kairos.com/terms - face recognition data is stored on Kairos' servers."
+                android:textStyle="bold" />
+
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:text="Register Face"
                 android:background="#00e676"
                 android:textStyle="bold"
-                android:id="@+id/register_face_btn"/>
+                android:id="@+id/register_face_btn"
+                android:layout_below="@+id/textView2"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="33dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -74,17 +89,9 @@
                 android:layout_below="@+id/view_btn"
                 android:background="#00e676"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:textStyle="bold"
                 android:id="@+id/exit"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/exit"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"
-                android:text="NOTE: If camera does not show up(work), Please enable camera permissions in the AppSettings."/>
-
 
         </RelativeLayout>
     </RelativeLayout>
