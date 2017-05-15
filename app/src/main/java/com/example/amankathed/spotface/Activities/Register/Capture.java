@@ -1,10 +1,14 @@
 package com.example.amankathed.spotface.Activities.Register;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -42,6 +46,8 @@ public class Capture extends AppCompatActivity implements SurfaceHolder.Callback
         flip = (Button) findViewById(R.id.flip_cam_btn);
         sharedPrefs= new SharedPrefs(this);
         currentCameraId=sharedPrefs.getCam_prefs();
+
+
         startcam(currentCameraId);
 
         take_pic.setOnClickListener(new View.OnClickListener() {
