@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Result !!!"
+        android:text="Results"
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="#000000"
@@ -35,28 +35,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="NAME RECOGNIZED AS :"
-        android:layout_below="@+id/img_view"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:inputType="textPersonName"
-        android:maxLines="1"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:textColor="#000000"
-        android:id="@+id/nametext"
-        android:textAlignment="center"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="Not Found"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:textSize="25sp"
         android:textColor="@color/green"
         android:id="@+id/name"
-        android:layout_below="@+id/nametext"
+        android:layout_below="@+id/img_view"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textStyle="bold"/>

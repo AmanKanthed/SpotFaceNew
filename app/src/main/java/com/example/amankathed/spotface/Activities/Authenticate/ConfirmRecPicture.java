@@ -207,8 +207,11 @@ public class ConfirmRecPicture extends AppCompatActivity {
                                     startActivity(i);
                                     finish();
                                 }else if(errorcode.equals("5002")) {
-                                    Toast.makeText(getApplicationContext(), "No faces found in the image", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                                    Intent i = new Intent(getApplicationContext(),Result.class);
+                                    i.putExtra("imgg", finalByteArray);
+                                    i.putExtra("name","No faces found in the image");
+                                    i.putExtra("conf","0.0");
+                                    startActivity(i);
                                     finish();
                                 }else {
                                     Toast.makeText(getApplicationContext(), "Try again later", Toast.LENGTH_SHORT).show();

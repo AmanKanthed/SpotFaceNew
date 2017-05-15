@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.amankathed.spotface.MainMenu;
 import com.example.amankathed.spotface.R;
+import com.example.amankathed.spotface.Utils.SharedPrefs;
 
 
 public class Result extends AppCompatActivity {
@@ -34,16 +35,23 @@ public class Result extends AppCompatActivity {
         String name_id=extras.getString("name");
         String conf=extras.getString("conf");
         float p = Float.parseFloat(conf);
-        float fp = p*100;
-        String v = String.valueOf(fp);
 
-        Toast.makeText(getApplicationContext(),v+" %",Toast.LENGTH_SHORT).show();
-        if (conf.equals("0.0")){
-            confidence.setVisibility(View.GONE);
+        // the confidence percentage
+        float fp = p*100;
+
+
+        // check if meets minimum level
+        SharedPrefs prefs = new SharedPrefs(this);
+        Float minPercentage = Float.parseFloat(prefs.getPer_prefs());
+        if (fp < minPercentage){
+            name.setText(name_id);
             name.setTextColor(getResources().getColor(R.color.red));
+            confidence.setText(String.format("Confidence below threshold! (%.2f%%)", fp));
+        } else {
+            name.setText("Successfully recognized as: " + name_id);
+            confidence.setText(String.format("Confidence: %.2f%%", fp));
         }
-        name.setText(name_id);
-        confidence.setText("Confidence: "+v+" %");
+        // Toast.makeText(getApplicationContext(),v+" %",Toast.LENGTH_SHORT).show();
         Bitmap bmpp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         Bitmap bmp = Bitmap.createBitmap(bmpp, 0, 0, bmpp.getWidth(), bmpp.getHeight(), null, true);
         img.setImageBitmap(bmp);
