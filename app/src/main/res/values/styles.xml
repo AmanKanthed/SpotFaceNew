@@ -18,7 +18,7 @@
     </style>
 
     <style name="NormalButton" parent="AppTheme">
-        <item name="android:background">#9c9c9c</item>
+        <item name="android:background">#a1887f</item>
     </style>
 
     <style name="PrimaryButton">
@@ -26,11 +26,11 @@
     </style>
 
     <style name="ActionButton" parent="AppTheme">
-        <item name="android:background">#3bef13</item>
+        <item name="android:background">#ff9800</item>
     </style>
 
     <style name="BackButton" parent="AppTheme">
-        <item name="android:background">#ef9a13</item>
+        <item name="android:background">#b388ff</item>
     </style>
 
 
