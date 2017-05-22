@@ -107,10 +107,9 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Settings.this);
-                builder.setTitle(String.format("%1$s","RESET TRAIN DATA"));
-                builder.setMessage("This action will delete all the trained data !\n" +
-                        "Proceed ?\n" +
-                        "Recommended: No");
+                builder.setTitle(String.format("%1$s","RESET DATA"));
+                builder.setMessage("This will delete all your saved face recognition data!\n" +
+                        "Do you wish to proceed?\n");
                 builder.setPositiveButton("Reset", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
