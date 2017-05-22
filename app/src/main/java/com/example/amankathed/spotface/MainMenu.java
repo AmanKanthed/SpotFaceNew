@@ -3,11 +3,13 @@ package com.example.amankathed.spotface;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,7 @@ import com.example.amankathed.spotface.Activities.Authenticate.Recognition;
 import com.example.amankathed.spotface.Activities.Register.Capture;
 import com.example.amankathed.spotface.Activities.Settings.Settings;
 import com.example.amankathed.spotface.Activities.ViewAll.ViewAll;
+import com.example.amankathed.spotface.Utils.SharedPrefs;
 
 
 public class MainMenu extends AppCompatActivity {
@@ -64,6 +67,26 @@ public class MainMenu extends AppCompatActivity {
                                         startActivity(new Intent(getApplicationContext(), About.class));
                                     }
                                 });
+
+        // ensure user agrees to terms
+        SharedPreferences prefs = getSharedPreferences("first_run", MODE_PRIVATE);
+        if (!prefs.getBoolean("hasRanBefore", false)) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainMenu.this);
+            builder.setTitle("First Run");
+            builder.setMessage("Please note that this app stores data with Kairos.com, and by using this app you agree to their privacy policy, and terms and conditions." +
+                    " For more information, see the About page.");
+            builder.setIcon(R.drawable.lotte);
+            builder.setPositiveButton("OK", null);
+            builder.setCancelable(false);
+            AlertDialog alert = builder.create();
+            alert.show();
+
+            // set the preference so it won't run again
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("hasRanBefore", true);
+            editor.commit();
+        }
+
 
         // get camera permissions
 
