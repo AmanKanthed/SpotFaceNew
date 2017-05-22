@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
     <style name="AppTheme.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -15,5 +16,22 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="NormalButton" parent="AppTheme">
+        <item name="android:background">#9c9c9c</item>
+    </style>
+
+    <style name="PrimaryButton">
+        <item name="android:background">#03a9f4</item>
+    </style>
+
+    <style name="ActionButton" parent="AppTheme">
+        <item name="android:background">#3bef13</item>
+    </style>
+
+    <style name="BackButton" parent="AppTheme">
+        <item name="android:background">#ef9a13</item>
+    </style>
+
 
 </resources>

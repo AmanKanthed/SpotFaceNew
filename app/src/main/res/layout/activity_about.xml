@@ -20,7 +20,7 @@
         android:textColor="#ffffff"
         android:gravity="center"
         android:id="@+id/about_back_btn"
-        android:background="#03a9f4"
+        style="@style/ActionButton"
         android:foregroundGravity="center"/>
 
 </LinearLayout>

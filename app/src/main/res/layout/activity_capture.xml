@@ -42,8 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Flip Camera"
-            android:background="#ffeb3b"
             android:textStyle="bold"
+            style="@style/ActionButton"
             android:id="@+id/flip_cam_btn" />
 
         <Button
@@ -52,9 +52,9 @@
             android:text="Take Photo"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:background="#00e676"
             android:layout_below="@+id/flip_cam_btn"
             android:id="@+id/takepic_btn"
+            style="@style/PrimaryButton"
             />
 
     </RelativeLayout>

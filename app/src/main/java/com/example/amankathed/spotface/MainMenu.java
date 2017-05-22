@@ -22,7 +22,7 @@ import com.example.amankathed.spotface.Activities.ViewAll.ViewAll;
 public class MainMenu extends AppCompatActivity {
 
     private static final int PERMISSIONS_CAMERA = 1;
-    Button auth,register,settings,exit,view;
+    Button auth,register,settings,view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,6 @@ public class MainMenu extends AppCompatActivity {
         auth= (Button) findViewById(R.id.auth_with_sp_btn);
         register= (Button) findViewById(R.id.register_face_btn);
         settings = (Button) findViewById(R.id.settings_btn);
-        exit= (Button) findViewById(R.id.exit);
         view= (Button) findViewById(R.id.view_btn);
         Button about = (Button) findViewById(R.id.about_btn);
         auth.setOnClickListener(new View.OnClickListener() {
@@ -56,12 +55,6 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ViewAll.class));
-            }
-        });
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
             }
         });
 

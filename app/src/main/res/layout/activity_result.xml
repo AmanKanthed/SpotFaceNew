@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.errorlabs.spotface.Activities.Register.ConfirmCapture">
+    tools:context="com.example.amankathed.spotface.Activities.Authenticate.Result">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -65,12 +65,12 @@
         android:layout_height="60dp"
         android:text="Back to main menu"
         android:id="@+id/cancel"
-        android:background="@color/yellow"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/conf"
         android:layout_marginLeft="20dp"
         android:textColor="#000000"
         android:layout_marginRight="20dp"
+        style="@style/BackButton"
         android:textStyle="bold"/>
 
 </RelativeLayout>

@@ -36,7 +36,7 @@ import okhttp3.OkHttpClient;
 
 public class Settings extends AppCompatActivity {
 
-    Button reset,back,changebtn,editbtn,ok,cncl;
+    Button reset,back,changebtn;
     OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
@@ -45,9 +45,8 @@ public class Settings extends AppCompatActivity {
     LoadToast loadToast;
     Connection connection;
     SharedPrefs sharedPrefs;
-    RelativeLayout rel1,rel2;
     EditText fre;
-    TextView per,prgstxt;
+    TextView per;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +55,6 @@ public class Settings extends AppCompatActivity {
         reset= (Button) findViewById(R.id.reset_btn);
         back= (Button) findViewById(R.id.back);
         changebtn= (Button) findViewById(R.id.changebtn);
-        editbtn= (Button) findViewById(R.id.editbtn);
-        rel1= (RelativeLayout) findViewById(R.id.rel1);
-        rel2= (RelativeLayout) findViewById(R.id.rel2);
-        ok= (Button) findViewById(R.id.btnok);
-        cncl= (Button) findViewById(R.id.cancl);
         fre= (EditText) findViewById(R.id.thrfreq);
         per = (TextView) findViewById(R.id.tt1);
         loadToast=new LoadToast(this);
@@ -73,32 +67,7 @@ public class Settings extends AppCompatActivity {
         }else {
             changebtn.setText("Front");
         }
-        per.setText(sharedPrefs.getPer_prefs()+" %");
-        editbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rel1.setVisibility(View.GONE);
-                rel2.setVisibility(View.VISIBLE);
-            }
-        });
-
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String f =fre.getText().toString();
-                int i = Integer.parseInt(String.valueOf(f));
-                if (i==0 || i>100 || i<40){
-                    fre.setText(null);
-                    fre.setError("Invalid Input");
-                }else {
-                    sharedPrefs.setPer_prefs(f);
-                    String s = String.valueOf(sharedPrefs.getPer_prefs()+" %");
-                    per.setText(f);
-                    rel1.setVisibility(View.VISIBLE);
-                    rel2.setVisibility(View.GONE);
-                }
-            }
-        });
+        per.setText("Minimum match threshold: " + sharedPrefs.getPer_prefs()+" %");
 
         changebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +84,21 @@ public class Settings extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String f =fre.getText().toString();
+                if (f.length() != 0) {
+                    int i = Integer.parseInt(String.valueOf(f));
+                    if (i == 0 || i > 100 || i < 40) {
+                        fre.setText(null);
+                        fre.setError("Invalid Input");
+                        return;
+                    } else {
+                        sharedPrefs.setPer_prefs(f);
+                        String s = String.valueOf(sharedPrefs.getPer_prefs() + " %");
+                        per.setText("Minimum match threshold: " + f);
+                    }
+                }
+
+                // all good and saved, exit to main menu
                 startActivity(new Intent(getApplicationContext(), MainMenu.class));
                 finish();
             }

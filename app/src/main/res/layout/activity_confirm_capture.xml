@@ -64,21 +64,21 @@
         android:layout_marginTop="10dp"
         android:id="@+id/confirm"
         android:layout_below="@+id/name"
-        android:background="@color/green"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        style="@style/PrimaryButton"
         android:textStyle="bold"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Cancel"
-        android:background="@color/yellow"
         android:id="@+id/cancel"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/confirm"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        style="@style/BackButton"
         android:textStyle="bold"/>
 
 </RelativeLayout>
