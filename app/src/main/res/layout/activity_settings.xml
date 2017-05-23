@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="SETTINGS"
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="32sp"
@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Minimum match threshold: 60%"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="20sp"
@@ -58,16 +59,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Default camera used:"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
             android:id="@+id/id1"/>
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/changebtn"
-            android:text="Front"
-            />
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Front" />
 
 
         <Button
@@ -93,7 +96,7 @@
             android:layout_alignParentStart="true"
             android:foregroundGravity="center"
             android:gravity="center"
-            android:text="Save and return"
+            android:text="SAVE AND RETURN TO MENU"
             android:textColor="#ffffff"
             android:textStyle="bold" />
     </LinearLayout>

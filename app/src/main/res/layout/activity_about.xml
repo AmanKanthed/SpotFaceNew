@@ -15,11 +15,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="back to main menu"
+        android:text="BACK TO MAIN MENU"
         android:textStyle="bold"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_margin="10dp"
         android:textColor="#ffffff"
         android:gravity="center"
         android:id="@+id/about_back_btn"

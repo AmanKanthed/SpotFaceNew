@@ -44,12 +44,12 @@
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             style="@style/PrimaryButton"
-            android:layout_below="@+id/img_view"/>
+            />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="re-take photo"
+            android:text="RE-TAKE PHOTO"
             android:layout_marginTop="20dp"
             android:id="@+id/click_again"
             android:textStyle="bold"

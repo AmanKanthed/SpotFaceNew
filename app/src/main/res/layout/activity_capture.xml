@@ -41,7 +41,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="Flip Camera"
+            android:text="FLIP CAMERA"
             android:textStyle="bold"
             style="@style/ActionButton"
             android:id="@+id/flip_cam_btn" />
@@ -49,7 +49,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="Take Photo"
+            android:text="TAKE PHOTO"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/flip_cam_btn"

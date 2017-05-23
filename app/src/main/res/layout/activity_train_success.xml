@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="com.example.amankathed.spotface.Activities.Settings.Settings">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your details have been saved."
+                android:text="YOUR DETAILS HAVE BEEN SAVED."
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:textColor="#000000"
@@ -26,23 +27,23 @@
                 android:gravity="center_horizontal"
                 />
 
-            <Button
+        <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register another face"
+                android:text="REGISTER ANOTHER FACE"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:id="@+id/back_to_pic"
                 android:layout_below="@+id/t1"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_height="60dp"
                 style="@style/ActionButton"
                 android:layout_marginTop="61dp" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="back to main menu"
+                android:layout_height="60dp"
+                android:text="BACK TO MAIN MENU"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
                 android:gravity="center"
@@ -52,7 +53,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 style="@style/BackButton"
-                android:layout_marginTop="27dp" />
+                android:layout_marginTop="10dp" />
 
 
 

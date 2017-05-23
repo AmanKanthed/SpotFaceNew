@@ -32,7 +32,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Register Face"
+                android:text="REGISTER FACE"
                 android:textStyle="bold"
                 android:id="@+id/register_face_btn"
                 android:layout_alignParentLeft="true"
@@ -42,7 +42,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Recognize Face"
+                android:text="RECOGNIZE FACE"
                 android:layout_below="@+id/register_face_btn"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
@@ -52,7 +52,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="View Registered Names"
+                android:text="VIEW REGISTERED NAMES"
                 android:layout_below="@+id/auth_with_sp_btn"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
@@ -62,7 +62,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Settings"
+                android:text="SETTINGS"
                 android:layout_below="@+id/view_btn"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
@@ -72,7 +72,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="About"
+                android:text="ABOUT"
                 android:layout_below="@+id/settings_btn"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"

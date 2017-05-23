@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Results"
+        android:text="RESULTS"
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="#000000"
@@ -63,7 +63,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Back to main menu"
+        android:text="BACK TO MAIN MENU"
         android:id="@+id/cancel"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/conf"
